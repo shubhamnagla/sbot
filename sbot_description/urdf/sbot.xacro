@@ -1,0 +1,327 @@
+<?xml version="1.0" ?>
+<robot name="sbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find sbot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find sbot_description)/urdf/sbot.trans" />
+<xacro:include filename="$(find sbot_description)/urdf/sbot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.15012412450156007 0.00016246879715255052 0.05490815059373435"/>
+    <mass value="0.23247786120094804"/>
+    <inertia ixx="0.000499" ixy="-0.0" ixz="-1e-06" iyy="0.000458" iyz="1e-06" izz="0.000486"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.031570846587633025 2.7070954309192023e-05 0.005505365676834351"/>
+    <mass value="0.020403784271412918"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="2e-06" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/motor_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/motor_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.025570844497173423 -2.706874178956277e-05 0.005505366569773653"/>
+    <mass value="0.02040380926849268"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="2e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/motor_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/motor_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.007539764086221298 7.404859327223378e-10 0.00024385827650407269"/>
+    <mass value="0.020021601354988094"/>
+    <inertia ixx="5e-06" ixy="-0.0" ixz="0.0" iyy="3e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0917 0.0 -0.0198"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0917 0.0 -0.0198"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0014602791163461637 -7.404860052490078e-10 0.00023385826937497717"/>
+    <mass value="0.02002160135498824"/>
+    <inertia ixx="5e-06" ixy="-0.0" ixz="-0.0" iyy="3e-06" iyz="0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.1933 0.0 -0.0198"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.1933 0.0 -0.0198"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="raspberry_pi_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.014965472519733153 -0.0012540083650862748 0.004888830680915356"/>
+    <mass value="0.13472167579144456"/>
+    <inertia ixx="4.1e-05" ixy="-0.0" ixz="-9e-06" iyy="8.3e-05" iyz="0.0" izz="0.000118"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.055"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/raspberry_pi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.055"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/raspberry_pi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.551115123125783e-17 0.006705900429680384 0.03770114222279117"/>
+    <mass value="1.151561654231423"/>
+    <inertia ixx="0.000861" ixy="-0.0" ixz="0.0" iyy="0.000489" iyz="-0.000148" izz="0.000987"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 0.0 -0.095"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 0.0 -0.095"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_driver_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0003528993658722668 -0.03602215316394226 0.006585464632791936"/>
+    <mass value="0.00976688395753173"/>
+    <inertia ixx="2e-06" ixy="-0.0" ixz="-0.0" iyy="2e-06" iyz="0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="imu_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.7755575615628914e-17 -5.709718412357968e-17 -0.005999999999999783"/>
+    <mass value="0.01098999999999996"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 0.0 -0.09"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 0.0 -0.09"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_front_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.05000000000000001 -0.0034338235294117635"/>
+    <mass value="0.004055599766243572"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/caster_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/caster_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_back_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-5.551115123125783e-17 -0.05 -0.0034338235294117557"/>
+    <mass value="0.004055599766243572"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/caster_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/caster_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="realsense_camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00021997674610199636 0.040945435469889095 -0.013439169475706947"/>
+    <mass value="0.35151345790137706"/>
+    <inertia ixx="3.2e-05" ixy="-1e-06" ixz="0.0" iyy="0.000227" iyz="0.0" izz="0.000229"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0175 -0.087"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/realsense_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0175 -0.087"/>
+    <geometry>
+      <mesh filename="package://sbot_description/meshes/realsense_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_motor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.015"/>
+  <parent link="base_link"/>
+  <child link="motor_right_1"/>
+</joint>
+
+<joint name="left_motor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.015"/>
+  <parent link="base_link"/>
+  <child link="motor_left_1"/>
+</joint>
+
+<joint name="right_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0583 -0.0 0.0048"/>
+  <parent link="motor_right_1"/>
+  <child link="wheel_right_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="left_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.0433 -0.0 0.0048"/>
+  <parent link="motor_left_1"/>
+  <child link="wheel_left_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="raspberry_pi_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.055"/>
+  <parent link="base_link"/>
+  <child link="raspberry_pi_1"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.095"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="motor_driver_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.015"/>
+  <parent link="base_link"/>
+  <child link="motor_driver_1"/>
+</joint>
+
+<joint name="imu_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.09"/>
+  <parent link="base_link"/>
+  <child link="imu_1"/>
+</joint>
+
+<joint name="front_caster_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.01"/>
+  <parent link="base_link"/>
+  <child link="caster_front_1"/>
+</joint>
+
+<joint name="back_caster_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.01"/>
+  <parent link="base_link"/>
+  <child link="caster_back_1"/>
+</joint>
+
+<joint name="realsense_camera_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0175 -0.003"/>
+  <parent link="imu_1"/>
+  <child link="realsense_camera_1"/>
+</joint>
+
+</robot>
