@@ -7,7 +7,8 @@
 <xacro:include filename="$(find sbot_description)/gazebo/sbot_plugins.gazebo" />
 <xacro:include filename="$(find sbot_description)/gazebo/sbot_materials.gazebo" />
 <xacro:include filename="$(find sbot_description)/gazebo/sbot_physics.gazebo" />
-
+<xacro:include filename="$(find realsense)/urdf/realsense.urdf.xacro" />
+  
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.15012412450156007 0.00016246879715255052 0.05490815059373435"/>
