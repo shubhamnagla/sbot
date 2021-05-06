@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<robot name="sbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/White" />
+<xacro:property name="wheel_color" value="Gazebo/Black" />
+<xacro:property name="lidar_color" value="Gazebo/Blue" />
+<xacro:property name="caster_color" value="Gazebo/Black" />
+<xacro:property name="motor_driver_color" value="Gazebo/Red" />
+<xacro:property name="raspberry_pi_color" value="Gazebo/Green" />
+<xacro:property name="realsense_color" value="Gazebo/Grey" />
+
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="motor_right_1">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="motor_left_1">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="wheel_right_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="wheel_left_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="raspberry_pi_1">
+  <material>${raspberry_pi_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${lidar_color}</material>
+</gazebo>
+
+<gazebo reference="motor_driver_1">
+  <material>${motor_driver_color}</material>
+</gazebo>
+
+<gazebo reference="imu_1">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="caster_front_1">
+  <material>${caster_color}</material>
+</gazebo>
+
+<gazebo reference="caster_back_1">
+  <material>${caster_color}</material>
+</gazebo>
+
+<gazebo reference="realsense_camera_1">
+  <material>${realsense_color}</material>
+</gazebo>
+
+</robot>
