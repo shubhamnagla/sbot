@@ -1,0 +1,34 @@
+#footprint: [[-0.376, -0.275],[-0.376, 0.275], [0.376, 0.275], [0.376, -0.275]]
+#footprint_padding: 0.05
+robot_radius: 150.0
+
+transform_tolerance: 0.5
+resolution: 0.05
+
+
+laser_obstacle_layer:
+ enabled: true
+ track_unknown_space: true
+ combination_method: 1
+ observation_sources: laser
+ 
+ laser:
+  data_type: LaserScan
+  topic: /sbot/laserscan
+  obstacle_range: 15.0
+  raytrace_range: 15.0
+  expected_update_rate: 10.0 
+  marking: true
+  clearing: true
+
+  
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  5.0
+  inflation_radius:     0.8 
+
+static_layer:
+  enabled:              true
+  map_topic:            "map"
+  subscribe_to_updates: true
