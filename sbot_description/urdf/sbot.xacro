@@ -3,10 +3,14 @@
 
 <xacro:include filename="$(find sbot_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find sbot_description)/urdf/sbot.trans" />
-<xacro:include filename="$(find sbot_description)/urdf/sbot.gazebo" />
+<xacro:include filename="$(find sbot_description)/gazebo/sbot_plugins.gazebo" />
+<xacro:include filename="$(find sbot_description)/gazebo/sbot_materials.gazebo" />
+<xacro:include filename="$(find sbot_description)/gazebo/sbot_physics.gazebo" />
+<xacro:include filename="$(find realsense_ros_gazebo)/xacro/depthcam.xacro" />
+
 <link name="base_link">
   <inertial>
-    <origin rpy="0 0 0" xyz="0.0030130910059084394 0.0014669089311552808 0.055908150593734406"/>
+    <origin rpy="0 0 0" xyz="0.0030130910059084394 0.0014669089311553155 0.055908150593734406"/>
     <mass value="0.23247786120094818"/>
     <inertia ixx="0.000458" ixy="0.0" ixz="1e-06" iyy="0.000499" iyz="1e-06" izz="0.000486"/>
   </inertial>
@@ -27,8 +31,8 @@
 
 <link name="motor_right_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="2.6693163065039712e-05 -0.031571062158037316 0.005505365676834344"/>
-    <mass value="0.020403784271412873"/>
+    <origin rpy="0 0 0" xyz="2.6693163065029304e-05 -0.031571062158037365 0.005505365676834351"/>
+    <mass value="0.020403784271412942"/>
     <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="2e-06"/>
   </inertial>
   <visual>
@@ -48,8 +52,8 @@
 
 <link name="motor_left_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-2.7446533033722176e-05 0.03357062892676914 0.005505366569773771"/>
-    <mass value="0.020403809268492838"/>
+    <origin rpy="0 0 0" xyz="-2.7446533033708732e-05 0.03357062892676921 0.005505366569773813"/>
+    <mass value="0.020403809268492824"/>
     <inertia ixx="2e-06" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="2e-06"/>
   </inertial>
   <visual>
@@ -69,9 +73,9 @@
 
 <link name="wheel_right_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-3.772220971867517e-07 0.00753952726244482 -6.141580913027189e-06"/>
-    <mass value="0.020021601354988428"/>
-    <inertia ixx="3e-06" ixy="0.0" ixz="-0.0" iyy="5e-06" iyz="-0.0" izz="3e-06"/>
+    <origin rpy="0 0 0" xyz="-3.7664430868134327e-07 0.0075395273198648055 -6.141588042178625e-06"/>
+    <mass value="0.020021601354988452"/>
+    <inertia ixx="3e-06" ixy="0.0" ixz="0.0" iyy="5e-06" iyz="-0.0" izz="3e-06"/>
   </inertial>
   <visual>
     <origin rpy="0 0 0" xyz="-0.002851 0.056957 -0.021"/>
@@ -90,8 +94,8 @@
 
 <link name="wheel_left_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-3.786945579177872e-07 -0.007539957892747057 -6.141505074701986e-06"/>
-    <mass value="0.020021601354988167"/>
+    <origin rpy="0 0 0" xyz="-3.7812528066397816e-07 -0.007539957792592984 -6.14158804220985e-06"/>
+    <mass value="0.02002160135498825"/>
     <inertia ixx="3e-06" ixy="0.0" ixz="0.0" iyy="5e-06" iyz="0.0" izz="3e-06"/>
   </inertial>
   <visual>
@@ -111,7 +115,7 @@
 
 <link name="raspberry_pi_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-0.0012543861563304149 -0.014965688090137704 0.0048888306809153695"/>
+    <origin rpy="0 0 0" xyz="-0.0012543861563304364 -0.01496568809013773 0.004888830680915349"/>
     <mass value="0.13472167579144456"/>
     <inertia ixx="8.3e-05" ixy="0.0" ixz="0.0" iyy="4.1e-05" iyz="9e-06" izz="0.000118"/>
   </inertial>
@@ -132,9 +136,9 @@
 
 <link name="lidar_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="0.004705522638436231 0.003999784429595362 0.03770114222279114"/>
-    <mass value="1.1515616542314238"/>
-    <inertia ixx="0.000489" ixy="-0.0" ixz="-0.000148" iyy="0.000861" iyz="-0.0" izz="0.000987"/>
+    <origin rpy="0 0 0" xyz="-0.0002944773615637473 -0.0010002155704046025 0.037701142222791195"/>
+    <mass value="1.151561654231423"/>
+    <inertia ixx="0.000489" ixy="0.0" ixz="-0.000148" iyy="0.000861" iyz="0.0" izz="0.000987"/>
   </inertial>
   <visual>
     <origin rpy="0 0 0" xyz="-0.002851 -0.001343 -0.096"/>
@@ -153,8 +157,8 @@
 
 <link name="motor_driver_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-0.03902253095511082 -0.00035311529851688784 0.006585464632766654"/>
-    <mass value="0.009766883957531804"/>
+    <origin rpy="0 0 0" xyz="-0.04002253095513978 -0.0003531151179055718 0.006585464632791877"/>
+    <mass value="0.009766883957531803"/>
     <inertia ixx="2e-06" ixy="0.0" ixz="0.0" iyy="2e-06" iyz="0.0" izz="3e-06"/>
   </inertial>
   <visual>
@@ -174,9 +178,9 @@
 
 <link name="imu_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-3.777912442244104e-07 -2.155704046324057e-07 -0.005999999999999783"/>
+    <origin rpy="0 0 0" xyz="-3.7779124422094093e-07 -2.1557040461332375e-07 -0.0029999999999997806"/>
     <mass value="0.01098999999999996"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="1e-06"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="1e-06"/>
   </inertial>
   <visual>
     <origin rpy="0 0 0" xyz="-0.002851 -0.001343 -0.091"/>
@@ -195,9 +199,9 @@
 
 <link name="caster_front_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="0.04499962220875584 -2.1557040466688333e-07 -0.004433823529411766"/>
+    <origin rpy="0 0 0" xyz="0.04499962220875584 -2.155704046666665e-07 -0.004333823529411766"/>
     <mass value="0.004055599766243573"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
   </inertial>
   <visual>
     <origin rpy="0 0 0" xyz="-0.002851 -0.001343 -0.011"/>
@@ -216,9 +220,9 @@
 
 <link name="caster_back_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-0.04500037779124415 -2.1557040466688333e-07 -0.004433823529411765"/>
+    <origin rpy="0 0 0" xyz="-0.045000377791244155 -2.1557040466796754e-07 -0.004333823529411766"/>
     <mass value="0.004055599766243573"/>
-    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
   </inertial>
   <visual>
     <origin rpy="0 0 0" xyz="-0.002851 -0.001343 -0.011"/>
@@ -237,19 +241,19 @@
 
 <link name="realsense_camera_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="0.0490950577145563 -0.0015631936216790427 -0.010939169458893325"/>
-    <mass value="0.35151345790126937"/>
+    <origin rpy="0 0 0" xyz="0.04694505772227793 -0.0002201936226193231 -0.01593916944571505"/>
+    <mass value="0.3515134579013281"/>
     <inertia ixx="0.000227" ixy="1e-06" ixz="0.0" iyy="3.2e-05" iyz="-0.0" izz="0.000229"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.010701 -0.002686 -0.086"/>
+    <origin rpy="0 0 0" xyz="-0.012851 -0.001343 -0.091"/>
     <geometry>
       <mesh filename="package://sbot_description/meshes/realsense_camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.010701 -0.002686 -0.086"/>
+    <origin rpy="0 0 0" xyz="-0.012851 -0.001343 -0.091"/>
     <geometry>
       <mesh filename="package://sbot_description/meshes/realsense_camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -272,7 +276,7 @@
   <origin rpy="0 0 0" xyz="0.0 -0.0583 0.005"/>
   <parent link="motor_right_1"/>
   <child link="wheel_right_1"/>
-  <axis xyz="0.0 -1.0 -0.0"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
 <joint name="left_wheel_joint" type="continuous">
@@ -282,7 +286,7 @@
   <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
-<joint name="raspberry_pi_joint" type="fixed">
+<joint name="r_pi_joint" type="fixed">
   <origin rpy="0 0 0" xyz="0.002851 0.001343 0.056"/>
   <parent link="base_link"/>
   <child link="raspberry_pi_1"/>
@@ -294,13 +298,13 @@
   <child link="lidar_1"/>
 </joint>
 
-<joint name="motor_driver_joint" type="fixed">
+<joint name="Rigid84" type="fixed">
   <origin rpy="0 0 0" xyz="0.002851 0.001343 0.016"/>
   <parent link="base_link"/>
   <child link="motor_driver_1"/>
 </joint>
 
-<joint name="imu_joint" type="fixed">
+<joint name="Rigid85" type="fixed">
   <origin rpy="0 0 0" xyz="0.002851 0.001343 0.091"/>
   <parent link="base_link"/>
   <child link="imu_1"/>
@@ -318,8 +322,8 @@
   <child link="caster_back_1"/>
 </joint>
 
-<joint name="realsense_camera_joint" type="fixed">
-  <origin rpy="0 0 0" xyz="0.00785 0.001343 -0.005"/>
+<joint name="Rigid88" type="fixed">
+  <origin rpy="0 0 0" xyz="0.01 0.0 0.0"/>
   <parent link="imu_1"/>
   <child link="realsense_camera_1"/>
 </joint>

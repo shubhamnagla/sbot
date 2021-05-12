@@ -3,7 +3,7 @@
 <launch>
 
 
-    <arg name="laser_topic" default="/sbot/laserscan" />
+    <arg name="laser_topic" default="/scan" />
 
     <!-- Extra XML code to launch move_base -->
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">

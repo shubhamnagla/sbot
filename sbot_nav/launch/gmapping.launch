@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-    <arg name="scan_topic" value="/sbot/laserscan" />
-
+    <arg name="scan_topic" value="/scan" />
+    <param name="/use_sim_time" value="true"/>
 
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
         <param name="base_frame" value="base_link" />

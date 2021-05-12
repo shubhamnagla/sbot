@@ -14,7 +14,7 @@ laser_obstacle_layer:
  
  laser:
   data_type: LaserScan
-  topic: /sbot/laserscan
+  topic: /scan
   obstacle_range: 15.0
   raytrace_range: 15.0
   expected_update_rate: 10.0 
