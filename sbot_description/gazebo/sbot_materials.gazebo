@@ -54,8 +54,8 @@
   <material>${caster_color}</material>
 </gazebo>
 
-<gazebo reference="realsense_camera_1">
+<!--<gazebo reference="realsense_camera_1">
   <material>${realsense_color}</material>
-</gazebo>
+</gazebo>-->
 
 </robot>

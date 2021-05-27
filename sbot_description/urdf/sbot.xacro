@@ -28,7 +28,7 @@
     </geometry>
   </collision>
 </link>
-
+ 
 <link name="motor_right_1">
   <inertial>
     <origin rpy="0 0 0" xyz="2.6693163065029304e-05 -0.031571062158037365 0.005505365676834351"/>
@@ -239,7 +239,7 @@
   </collision>
 </link>
 
-<link name="realsense_camera_1">
+<!--<link name="realsense_camera_1">
   <inertial>
     <origin rpy="0 0 0" xyz="0.04694505772227793 -0.0002201936226193231 -0.01593916944571505"/>
     <mass value="0.3515134579013281"/>
@@ -258,7 +258,11 @@
       <mesh filename="package://sbot_description/meshes/realsense_camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
-</link>
+</link>-->
+
+<!--<xacro:realsense_d435 sensor_name="camera" parent_link="base_link" rate="15">
+  <origin rpy="0 0 0" xyz="0.04694505772227793 -0.0002201936226193231 0.06"/>
+</xacro:realsense_d435>-->
 
 <joint name="right_motor_joint" type="fixed">
   <origin rpy="0 0 0" xyz="0.002851 0.001343 0.016"/>
@@ -311,21 +315,21 @@
 </joint>
 
 <joint name="front_caster_joint" type="fixed">
-  <origin rpy="0 0 0" xyz="0.002851 0.001343 0.011"/>
+  <origin rpy="0 0 0" xyz="0.002851 0.001343 0.0115"/>
   <parent link="base_link"/>
   <child link="caster_front_1"/>
 </joint>
 
 <joint name="back_caster_joint" type="fixed">
-  <origin rpy="0 0 0" xyz="0.002851 0.001343 0.011"/>
+  <origin rpy="0 0 0" xyz="0.002851 0.001343 0.0115"/>
   <parent link="base_link"/>
   <child link="caster_back_1"/>
 </joint>
 
-<joint name="Rigid88" type="fixed">
+<!--<joint name="Rigid88" type="fixed">
   <origin rpy="0 0 0" xyz="0.01 0.0 0.0"/>
   <parent link="imu_1"/>
   <child link="realsense_camera_1"/>
-</joint>
+</joint>-->
 
 </robot>
